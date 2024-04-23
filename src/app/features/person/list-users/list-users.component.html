@@ -1,0 +1,16 @@
+<!-- features/person/list-users/list-users.component.html -->
+<h2>List of Users</h2>
+
+<div *ngIf="persons.length > 0">
+  <ul>
+    <li *ngFor="let person of persons">
+      {{ person.name }}
+      <button (click)="deletePerson(person.id)">Delete</button>
+      <button (click)="editPerson(person.id)">Edit</button>
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="persons.length == 0">
+  <p>No users available.</p>
+</div>
